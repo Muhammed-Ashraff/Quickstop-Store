@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quickstop Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body class="bg-primary-subtle">
+    <div class="container">
+        <hr>
+        <h1>APEX STORE</h1>
+        <p>The store is currently running a promo for online shopper, there will be a SALLAH'S DAY prize draw for customer who purchase goods worth upto #20,000 or 10 items in one treansaction</p>
+        <h3>Your Shopping Jersey....</h3>
+        <hr>
+        <form action="" class="form-control bg-primary-subtle">
+            <!-- form container product 1 -->
+            <div class="row">
+
+                <!-- div for product 1 -->
+                <label class="form-label">Items</label>
+                <div class="col-md-3">
+                    
+                    <!-- picture of the product -->
+                    <img src="./QuickstopStore_images/jersey1.webp" style="height: 200px;" class="img-thumbnail" alt="Jersey1">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Quantity</label>
+                    <!-- select quantity -->
+                    <select class="form-select" id="quantity1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                    <!-- fixed price -->
+                <div class="col-md-3">
+                    <label class="form-label">Price</label><br>
+                    <input type="text" name="price" value="4000" id="price1" disabled>
+                </div>
+                <!-- Total -->
+                <div class="col-md-3">
+                    <label class="form-label">Check</label>
+                    <p id="total1">Total</p>
+                </div>
+            </div>
+
+            <!-- form container product 2 -->
+            <div class="row">
+                <!-- div for product 2 -->
+                <div class="col-md-3">
+                    <!-- picture of the product -->
+                    <img src="./QuickstopStore_images/jersey2.jpg" style="height: 200px;" class="img-thumbnail" alt="jersey2">
+                </div>
+                <div class="col-md-3">
+                    <!-- select quantity -->
+                    <select class="form-select" id="quantity2">
+                        <option value="1">1</option>
+                        <option  value="2">2</option>
+                        <option  value="3">3</option>
+                        <option  value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                    <!-- fixed price -->
+                <div class="col-md-3">
+                    <input type="text" name="price" value="2000" id="price2" disabled>
+                </div>
+                <!-- Total -->
+                <div class="col-md-3">
+                    <p id="total2">Total</p>
+                </div>
+            </div>
+
+            <!-- form container product 3 -->
+            <div class="row">
+                <!-- div for product 3 -->
+                <div class="col-md-3">
+                    <!-- picture of the product -->
+                    <img src="./QuickstopStore_images/jersey3.jpg" style="height: 200px; width: 65%;" class="img-thumbnail" alt="jersey3">
+                </div>
+                <div class="col-md-3">
+                    <!-- select quantity -->
+                    <select class="form-select" id="quantity3">
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                    <!-- fixed price -->
+                <div class="col-md-3">
+                    <input type="text" name="price" value="1000" id="price3" disabled>
+                </div>
+                <!-- Total -->
+                <div class="col-md-3">
+                    <p id="total3">Total</p>
+                </div>
+            </div> <br>
+            <p id="totalPriceResult"></p><br>
+            <button class="btn btn-danger" type="button" onclick="enterPrizeDraw()" style="width: 100%;">Enter Prize Draw</button>
+        </form>
+        <!-- <p id="totalPriceResult"></p> -->
+        <img src="" id="qualifiedLogo" ><p id="qualifiedMessage"></p>
+        
+        <img src="" id="notQualifiedLogo">
+        <p id="NotqualifiedMessage"></p>
+        <hr>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+<script>
+
+
+        document.addEventListener('DOMContentLoaded', function(){
+            var price1 = document.getElementById('price1');
+            var quantity1 = document.getElementById('quantity1');
+            var totalPrice1 = document.getElementById('total1');
+
+            function updateTotalPrice1(){
+                var itemPrice1 = parseFloat(price1.value);
+                var itemQuantity1 = parseInt(quantity1.value);
+                var itemTotalPrice1 = itemPrice1 * itemQuantity1;
+
+                totalPrice1.textContent = itemTotalPrice1;
+            }
+
+            // Update total price on item change
+            quantity1.addEventListener('change', updateTotalPrice1);
+
+            // Initialize total price
+            updateTotalPrice1();
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function(){
+            var price2 = document.getElementById('price2');
+            var quantity2 = document.getElementById('quantity2');
+            var totalPrice2 = document.getElementById('total2');
+
+            function updateTotalPrice2(){
+                var itemPrice2 = parseFloat(price2.value);
+                var itemQuantity2 = parseInt(quantity2.value);
+                var itemTotalPrice2 = itemPrice2 * itemQuantity2;
+
+                totalPrice2.textContent = itemTotalPrice2;
+            }
+
+            // Update total price on item change
+            quantity2.addEventListener('change', updateTotalPrice2);
+
+            // Initialize total price
+            updateTotalPrice2();
+        });
+
+        document.addEventListener('DOMContentLoaded', function(){
+            var price3 = document.getElementById('price3');
+            var quantity3 = document.getElementById('quantity3');
+            var totalPrice3 = document.getElementById('total3');
+
+            function updateTotalPrice3(){
+                var itemPrice3 = parseFloat(price3.value);
+                var itemQuantity3 = parseInt(quantity3.value);
+                var itemTotalPrice3 = itemPrice3 * itemQuantity3;
+
+                totalPrice3.textContent = itemTotalPrice3;
+            }
+
+            // Update total price on item change
+            quantity3.addEventListener('change', updateTotalPrice3);
+
+            // Initialize total price
+            updateTotalPrice3();
+        });
+        
+        function enterPrizeDraw()
+        {
+            // get the amount of each item
+            var amount1 = document.getElementById('price1').value;
+            var amount2 = document.getElementById('price2').value;
+            var amount3 = document.getElementById('price3').value;
+
+            // get the quantity of each item
+            var quantityItem1 = document.getElementById('quantity1').value;
+            var quantityItem2 = document.getElementById('quantity2').value;
+            var quantityItem3 = document.getElementById('quantity3').value;
+
+            // calculate the total amount of each product bought
+            var totalAmount1 = parseInt(amount1) * parseInt(quantityItem1); 
+            var totalAmount2 = parseInt(amount2) * parseInt(quantityItem2); 
+            var totalAmount3 = parseInt(amount3) * parseInt(quantityItem3); 
+
+            // calculate the total quantity of items bought
+            var totalQuantity = parseInt(quantityItem1) + parseInt(quantityItem2) + parseInt(quantityItem3);
+
+            // calculate the total price of all the items bought
+            var totalItemPrice = totalAmount1 + totalAmount2 + totalAmount3;
+
+            document.getElementById('totalPriceResult').innerHTML = '#' + totalItemPrice;
+            document.getElementById('totalPriceResult').style.textAlign = 'center';
+            document.getElementById('totalPriceResult').style.color = 'green';
+            document.getElementById('totalPriceResult').style.border = '1px solid blue';
+            document.getElementById('totalPriceResult').style.borderRadius = '5px';
+            document.getElementById('totalPriceResult').style.borderWidth = 'center';
+            
+
+
+            // calculate the average of total items bought
+            var average = totalItemPrice / totalQuantity;
+             // conditional statement for qualified and unqualified 
+            if(totalItemPrice >= 20000 || totalQuantity >= 10){
+                // alert('you are qualified for the promo')
+                document.getElementById('qualifiedLogo').src = "./QuickstopStore_images/Qualified.png";
+                document.getElementById('qualifiedMessage').innerHTML = 'Congrats! you are qualified for our Sallah day promo. You are purchasing ' + totalQuantity + ' items, the total amount being spent is #' + totalItemPrice + ' naira and an average of ' + average;
+                document.getElementById('qualifiedMessage').style.color = 'green';
+                document.getElementById('qualifiedMessage').style.marginLeft = '165px';
+                document.getElementById('qualifiedMessage').style.marginTop = '-60px';
+                document.getElementById('qualifiedMessage').style.textAlign = 'center';
+            }else{
+                //alert('Sorry, you do not qualify for this. kindly reselect the items aqain')
+                document.getElementById('notQualifiedLogo').src = "./QuickstopStore_images/NotQualified.png";
+                document.getElementById('NotqualifiedMessage').innerHTML = 'Thank you for shopping with us, you are purchasing a total of ' + totalQuantity + ' items, the total amount being spent is #' + totalItemPrice +' naira and average of ' + average + '. Shop more to qualify for our sallah day promo.'
+                document.getElementById('NotqualifiedMessage').style.color = 'red';
+                document.getElementById('NotqualifiedMessage').style.marginLeft = '150px';
+                document.getElementById('NotqualifiedMessage').style.marginTop = '-60px';
+                document.getElementById('NotqualifiedMessage').style.textAlign = 'center'; 
+            }
+
+           
+           
+        }       
+
+
+
+
+    
+    
+
+
+
+
+</script>

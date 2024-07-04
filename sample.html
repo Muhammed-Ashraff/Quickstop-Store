@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Selected Option</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <form id="cart-form">
+        <label for="item">Select item:</label>
+        <select id="item" name="item">
+            <option value="10">Item 1 - $10</option>
+            <option value="20">Item 2 - $20</option>
+            <option value="30">Item 3 - $30</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+
+        <p>Total Price: $<span id="total-price">0</span></p>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+    
+
+
+    <script>
+       
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const itemSelect = document.getElementById('item');
+        const quantityInput = document.getElementById('quantity');
+        const totalPriceElement = document.getElementById('total-price');
+
+        function updateTotalPrice() {
+        const itemPrice = parseFloat(itemSelect.value);
+        const quantity = parseInt(quantityInput.value);
+        const totalPrice = itemPrice * quantity;
+
+        totalPriceElement.textContent = totalPrice;
+    }
+
+    // Update total price on item change
+    itemSelect.addEventListener('change', updateTotalPrice);
+
+    // Update total price on quantity change
+    quantityInput.addEventListener('input', updateTotalPrice);
+
+    // Initialize total price
+    updateTotalPrice();
+});
+
+    </script>
+</body>
+</html>
