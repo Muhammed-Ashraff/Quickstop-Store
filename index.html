@@ -117,64 +117,57 @@
 
 
         document.addEventListener('DOMContentLoaded', function(){
-            var price1 = document.getElementById('price1');
-            var quantity1 = document.getElementById('quantity1');
-            var totalPrice1 = document.getElementById('total1');
-
             function updateTotalPrice1(){
-                var itemPrice1 = parseFloat(price1.value);
-                var itemQuantity1 = parseInt(quantity1.value);
-                var itemTotalPrice1 = itemPrice1 * itemQuantity1;
+                var price1 = document.getElementById('price1').value;
+                var quantity1 = document.getElementById('quantity1').value;
+                var itemTotalPrice1 = price1 * quantity1;
 
+                var totalPrice1 = document.getElementById('total1');
                 totalPrice1.textContent = itemTotalPrice1;
             }
 
-            // Update total price on item change
-            quantity1.addEventListener('change', updateTotalPrice1);
+                // Update total price on item change
+                quantity1.addEventListener('change', updateTotalPrice1);
 
-            // Initialize total price
-            updateTotalPrice1();
+                // Initialize total price
+                updateTotalPrice1();
         });
 
 
         document.addEventListener('DOMContentLoaded', function(){
-            var price2 = document.getElementById('price2');
-            var quantity2 = document.getElementById('quantity2');
-            var totalPrice2 = document.getElementById('total2');
-
             function updateTotalPrice2(){
-                var itemPrice2 = parseFloat(price2.value);
-                var itemQuantity2 = parseInt(quantity2.value);
-                var itemTotalPrice2 = itemPrice2 * itemQuantity2;
+                var price2 = document.getElementById('price2').value;
+                var quantity2 = document.getElementById('quantity2').value;
+                var itemTotalPrice2 = price2 * quantity2;
 
+                var totalPrice2 = document.getElementById('total2');
                 totalPrice2.textContent = itemTotalPrice2;
             }
 
-            // Update total price on item change
-            quantity2.addEventListener('change', updateTotalPrice2);
+               // Update total price on item change
+               quantity2.addEventListener('change', updateTotalPrice2);
 
-            // Initialize total price
-            updateTotalPrice2();
+               // Initialize total price
+               updateTotalPrice2();
         });
 
+        
+
         document.addEventListener('DOMContentLoaded', function(){
-            var price3 = document.getElementById('price3');
-            var quantity3 = document.getElementById('quantity3');
-            var totalPrice3 = document.getElementById('total3');
-
             function updateTotalPrice3(){
-                var itemPrice3 = parseFloat(price3.value);
-                var itemQuantity3 = parseInt(quantity3.value);
-                var itemTotalPrice3 = itemPrice3 * itemQuantity3;
+                var price3 = document.getElementById('price3').value;
+                var quantity3 = document.getElementById('quantity3').value;
+                var itemTotalPrice3 = price3 * quantity3;
 
+                var totalPrice3 = document.getElementById('total3');
                 totalPrice3.textContent = itemTotalPrice3;
             }
 
-            // Update total price on item change
-            quantity3.addEventListener('change', updateTotalPrice3);
+                // Update total price on item change
+                quantity3.addEventListener('change', updateTotalPrice3);
 
-            // Initialize total price
-            updateTotalPrice3();
+                // Initialize total price
+                updateTotalPrice3();
         });
         
         function enterPrizeDraw()
